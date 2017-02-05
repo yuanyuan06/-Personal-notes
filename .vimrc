@@ -1,6 +1,7 @@
 set nu                         " 显示行号
 set nowrap			" 不自动换行
 set nocompatible              " be iMproved, required
+set tabstop=4
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -32,6 +33,19 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 
 Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
+
+Plugin 'ZenCoding.vim'
+Plugin 'taglist.vim'
+
+Plugin 'html_FileCompletion'
+Plugin 'vim-htmldjango_omnicomplete'
+Plugin 'html5.vim'
+Plugin 'HTML5-Syntax-File'
+Plugin 'HtmlHelper'
+Plugin 'HTML-AutoCloseTag'
+Plugin 'HTML.zip'
+Plugin 'EasyHtml.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,3 +91,9 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+
+let Tlist_Show_One_File=1    "只显示当前文件的tags
+let Tlist_WinWidth=40        "设置taglist宽度
+let Tlist_Exit_OnlyWindow=1  "tagList窗口是最后一个窗口，则退出Vim
+let Tlist_Use_Right_Window=1 "在Vim窗口右侧显示taglist窗口
