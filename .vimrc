@@ -1,3 +1,5 @@
+set nu                         " 显示行号
+set nowrap			" 不自动换行
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -29,6 +31,8 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 
+Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,22 +47,24 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
+map <F12> :PluginList<CR>
+" ================ nerdtree 相关配置 ==================
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
+" 侧栏快捷键
 map <C-n> :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let NERDTreeShowHidden=1
-
+let NERDTreeShowHidden=1			" 是否显示隐藏文件
+let NERDTreeWinSize=31				" 设置宽度
+" ================ berdtree 相关配置 ==================
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
