@@ -2,7 +2,16 @@ set nu                         " 显示行号
 set nowrap			" 不自动换行
 set nocompatible              " be iMproved, required
 set tabstop=4
-filetype off                  " required
+filetype on                  " 文件类型检测
+set mouse=a					 " 允许使用鼠标点击定位
+" *************** 光标配置 ***************
+set cursorcolumn
+set cursorline
+" highlight CursorLine   cterm=NONE ctermbg=gray ctermfg=green guibg=NONE guifg=NONE
+" highlight CursorColumn cterm=NONE ctermbg=gray ctermfg=green guibg=NONE guifg=NONE
+" highlight CursorLine cterm=NONE ctermbg=darkgray guibg=NONE guifg=NONE
+" highlight CursorColumn cterm=NONE ctermbg=darkgray guibg=NONE guifg=NONE
+" *************** 光标配置 ***************
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
